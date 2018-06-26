@@ -1,0 +1,12 @@
+基于CRF做分词标注
+参考:
+https://blog.csdn.net/oTengYue/article/details/78005557
+
+crf++ tool installation:
+refer:https://github.com/taku910/crfpp
+	mkdir tool
+	git clone https://github.com/taku910/crfpp
+	install_dir=$(pwd)/tool
+	cd crfpp
+	./configure --prefix=${install_dir}
+	make && make install
