@@ -1,6 +1,5 @@
 #!/bin/bash
 set -x
-
 tool_path=$(cd `dirname $0`;pwd)
 cd $tool_path
 
@@ -15,8 +14,8 @@ train_file=${tool_path}/data/pku_train.txt
 test_file=${tool_path}/data/pku_test.txt
 test_out=${tool_path}/pku_test.out
 
-#python gen_train_sample.py $train_org_file ${train_file}
-#python gen_train_sample.py $test_org_file ${test_file}
+python gen_train_sample.py $train_org_file ${train_file}
+python gen_train_sample.py $test_org_file ${test_file}
 
 $CRF_TRAIN -f 3 -c 4.0 -m 200 $TEMPLATE $train_file model -t
 $CRF_TEST -m model $test_file > $test_out
